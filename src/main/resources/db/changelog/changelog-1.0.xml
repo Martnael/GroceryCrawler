@@ -4,7 +4,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
 
-    <changeSet id="13.04.2021 v.1" author="Mart">
+    <changeSet id="22.04.2021 v.1" author="Mart">
         <createTable tableName="category">
             <column name="id" type="int" autoIncrement="true">
                 <constraints primaryKey="true"/>
@@ -15,10 +15,13 @@
         <column name="id" type="int" autoIncrement="true">
             <constraints primaryKey="true"/>
         </column>
-        <column name="category_name" type="text"/>
-        <column name="category_id" type="int">
+        <column name="shop_category_id" type="text"/>
+        <column name="shop_category_name" type="text"/>
+        <column name="shop_category_url" type="text"/>
+            <column name="category_id" type="int">
             <constraints foreignKeyName="fk_category_prisma-category" references="category(id)"/>
         </column>
+        <column name="status" type="text"/>
         </createTable>
     </changeSet>
 </databaseChangeLog>
